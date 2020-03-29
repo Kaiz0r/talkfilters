@@ -30,7 +30,10 @@ class TalkFilterRuntimeError(Exception):
     pass
 
 def print_filters():
-    print(out)
+    print(_help)
+    
+def filter_info():
+    return _help
     
 def list_filters():
     return ['austro', 'b1ff', 'brooklyn', 'chef', 'cockney', 'drawl', 'dubya', 'fudd', 'funetak', 'jethro', 'jive', 'kraut', 'pansy', 'pirate', 'postmodern', 'redneck', 'valspeak', 'warez']
