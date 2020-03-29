@@ -38,11 +38,11 @@ def filter_info():
 def list_filters():
     return ['austro', 'b1ff', 'brooklyn', 'chef', 'cockney', 'drawl', 'dubya', 'fudd', 'funetak', 'jethro', 'jive', 'kraut', 'pansy', 'pirate', 'postmodern', 'redneck', 'valspeak', 'warez']
         
-def send(filter_name, text):
+def send(filter_name, text, path=""):
     if filter_name not in list_filters():
         raise ValueError(f"Talkfilter {filter_name} not found.")
     
-    tf = subprocess.Popen([filter_name], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    tf = subprocess.Popen([path+filter_name], stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
     output, errors = tf.communicate(input=text)
     if errors:
         raise TalkFilterRuntimeError(str(errors))
