@@ -1,5 +1,6 @@
 # talkfilters
 A simple Python wrapper around GNU Talkfilters.
+
 Requires the talkfilters binaries (also available in this repo, convenience!) to be compiled and available in PATH somewhere.
 
 ## Example Usage
@@ -26,5 +27,7 @@ ValueError: Talkfilter etc not found.
 ```
 Also available is:
 print_filters() which prints a table of the filters and a description
+
 filter_info() returns the same as print_filters as a string
+
 list_filters() returns a list object containing the names of all available filter binaries
